@@ -1,0 +1,11 @@
+{
+	"Getter method": {
+		"prefix": "getter",
+		"body": [
+		  "public ${1:String} get${2:Campo}() {",
+		  "    return this.${3:campo};",
+		  "}"
+		],
+		"description": "Cria um método getter"
+	  }
+}

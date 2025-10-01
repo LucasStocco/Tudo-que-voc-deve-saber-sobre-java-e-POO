@@ -1,0 +1,42 @@
+Diagrama exercício 09 OOP
+
+
++----------+   Classe Pessoa:
+|  Pessoa  |   - nome
++----------+   - idade
+      |        - sexo
+  Lê  |        + fazerAniversario()
+      | (Relação)
+     🔷
++---------+   Classe Livro:
+|  Livro  |   - titulo
++---------+   - autor
+      |       - totalPaginas
+      |       - paginaAtual
+      |       - aberto
+      |       - leitor
+      |       + detalhes()
+      |
+      v
+ << interface >>
++--------------+   Classe Publicação:
+|  Publicacao  |   + abrir()
++--------------+   + fechar()
+                   + folhear()
+                   + avançarPagina()
+                   + voltarPagina()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

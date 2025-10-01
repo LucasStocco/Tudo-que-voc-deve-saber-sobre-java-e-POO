@@ -1,0 +1,137 @@
+Classe ContaBanco
+
+    //Atributos
+
+    publico(+) numConta: inteiro
+    protegido(#) tipo: caractere
+    privado(-) dono: caractere
+    privado(-) saldo: real
+    privado(-) status: lógico
+
+    //Métodos Específicos
+
+    publico Metodo abrirConta(t:Caractere) //'t' é o tipo da conta(corrente ou poupança)
+
+        //Toda conta poupança(CP) começa com R$ 150,00
+        //Toda conta corrente(CC) começa com R$50,00 
+        setTipo(t)
+        
+        //Ativando a conta do usuário
+        setStatus(verdadeiro)
+
+        se (t = "CC") entao
+            setSaldo(50)
+        senao se (t = "CP") entao
+            setSaldo(150)
+        FImSe
+    FimMetodo
+
+    publico Metodo fecharConta() //Para fechar a conta ela deve estar vazia e não pode estar devendo
+
+        se (saldo > 0) entao
+            escreva("Conta com dinheiro") //OBS: O ideal é que os métodos não escrevão
+        senao se (saldo < 0) entao
+            escreva("Conta em débito")
+        senao //Se ele não está positivo e nem negativo, ele só pode estar zerado
+        senao
+            setStatus(false)
+        FimSe
+    FimMetodo
+
+    public Metodo depositar(r:Real)
+        //Para depositar dinheiro na conta, antes deve-se verifar se a conta já está aberta
+        
+        se getStatus() entao
+            setSaldo(getSaldo() + v)
+        senao
+            escreva("Impossivel depositar") //Satus falso, ou seja, conta fechada
+        FimSe
+    FimMetodo
+
+    public Metodo sacar(v:Real)
+        //Para sacar á duas condições, se a conta está ativa, e se a conta está ativa e com dinheiro 
+
+        se getStatus() entao
+            se getSaldo() > v entao
+                setSaldo(getSaldo() - v)
+            senao //Significa que não á saldo suficiente
+                escreva("Saldo insuficiente")
+            FimSe
+        senao //Se a conta não está aberta
+            escreva("Impossível sacar")
+        FimSe
+    FimMetodo
+
+    public Metodo PagarMensalidade()
+        //Se for uma conta corrente, e ativa, pagará R$12,00 por mês
+        //Se for uma conta poupança, e ativa, pagará R$20,00 por mês
+        var v: Real //'v' é uma variável local, não um atributo
+        se getTipo() = "CC" entao
+            v = 12
+        senao se getTipo() = "CP" entao
+            v = 20
+        FimSe
+        se (status = verdadeiro) entao
+            se (saldo > v) entao
+                saldo = saldo - vai
+            senao
+                escreva("Saldo insuficiente")
+            FimSe
+        senao
+            escreva("Impossível pagar")
+        FimSe
+    FimMetodo
+
+    //Métodos Especiais
+
+    publico Metodo Construtor()
+    //O método construtor sempre vai ser executado toda vez que uma classe for instânciada, virar um objeto
+
+    //Sempre que uma conta for criada, o 'saldo' será inicializado com 0 e o status vai ser definido como 'falso'
+
+        saldo = 0
+        status = falso
+    fimMetodo
+
+    //Criando os Métodos Setters e Getters
+
+    publico Metodo setNumConta(n:Inteiro) //Têm que receber um parâmetro, no caso 'n' que é uma variável
+        NumConta = n
+    FimMetodo
+
+    publico Metodo getNumConta() //Não precisa receber parâmetros
+        retorne numConta
+    FimMetodo
+
+    public Metodo setTipo(t:Caractere) //O 't' não é um atributo, e sum uma variável
+        tipo = t
+    FimMetodo
+    
+    publico Metodo getTipo()
+        retorne tipo
+    FimMetodo
+
+    publico Metodo setDono(d:Caractere)
+        dono = t
+    FimMetodo
+
+    publico Metodo getDono()
+        retorne dono
+    FimMetodo
+    
+    publico Metodo setSaldo(s:Real)
+        saldo = s
+    FimMetodo
+
+    publico Metodo getSaldo()
+        retorne saldo
+    FimMetodo
+
+    publico Metodo setStatus(s:Logico)
+        status = s
+    FimMetodo
+
+    publico Metodo getStatus()
+        retorne status
+    FimMetodo
+FimClasse

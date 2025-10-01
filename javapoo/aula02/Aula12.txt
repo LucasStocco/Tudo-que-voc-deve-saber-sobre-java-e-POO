@@ -1,0 +1,170 @@
+Aula12
+
+Polimorfismo
+
+poli = muitas
+morfo = formas
+
+>> exemplo:
+
+Imagine que você tenha um método 'Acordar' na sua vida. Vamos pensar na sua rotina natural de atividades no decorrer da semana, ir a escola por exemplo. Quando você tem que acordar para ir para a escola, você acorda e faz uma determinada série de procedimentos, como escovar os seus dentes, colocar o uniforme, etc para enfim ir de fato para a escola. Mas e quando é um sábado por exemplo? O seu 'Acordar' é igual ao que você faz na semana? Geralmente as pessoas acordam um pouco mais tarde, outras aproveitam para fazer alguma outra atividade. Ou seja, na luz das regras, você ainda tem um 'Acordar', independente do dia, você terá jeitos diferentes, formas diferentes de fazer a mesma coisa. 
+
+Bibliografia:
+"Permite que um mesmo nome represente vários comportamentos diferentes."
+
+Assinatura de Método
+Todo método possui uma assinatura, é importante identificar, saber diferenciar assinaturas iguais e assinaturas diferentes pelo fato do Polimorfismo tratar esses conceitos na sua essência.
+
+Em que consiste uma assinatura?
+- quantidade e tipos de parâmetro
+
+Exemplo 1.0
+
+public metodo calcularMedia(n1, n2 : real): real
+- n1, n2 são do tipo real, e o retorno será também do tipo real.
+
+Exemplo 1.1
+
+public metodo calcularMedia(v1, v2: real): inteiro 
+- v1, v2 são do tipo real, e o retorno será do tipo inteiro.
+- os métodos dos exemplos 1.0 e 1.1 possuem as mesmas assinaturas, isso por que oque é contado na assinatura é a quantidade e os tipos de parâmetros.
+
+Exemplo 1.2
+
+publico metodo calcularMedia(bimeste: inteiro, n1, n2: real): real
+- possui uma assinatura diferente dos outros dois métodos.
+
+exemplo 1.3
+publico metodo calcularMedia(n1, n2, n3, n4: real): real
+- possui uma assinatura diferente de todos os outros métodos acima.
+
+Exemplo 1.4
+publico metodo calcularMedia(a, b: real, sit: caractere, bim: inteiro): caractere
+- também possui uma assinatura diferente dos outros métodos.
+
+Tipos de Polimorfismo(Os dois principais)
+
+1.Sobreposição
+
+2.Sobrecarga
+
+Exemplo 1.5 -> Pseudo diagrama de classes abstrata
+A classe 'Animal', de forma abstrata, vai cadastrar qualquer tipo de animal. Ela também terá suas especificações 'Mamífero', 'Réptil', 'Peixe' e 'Ave'. Todos eles herdam de 'Animal' 
+
+                     +----------+
+                     |  Animal  |
+                     +----------+
+                           ^
+                           |                           
+        +------------------+-----------------+--------------------+-----------+
+        |                                    |                    |           | 
++------------+                          +----------+          +---------+  +-------+  
+|  Mamífero  | <---+                    |  Réptil  |          |  Peixe  |  |  Ave  |  
++------------+     |                    +----------+          +---------+  +-------+  
+       ^           |                          ^                    ^            ^
+       |           |                          |                    |            |
+       |           |                 +--------+----+               |            |
+       |           |                 |             |               |            |
++-----------+  +------------+  +---------+  +-------------+  +------------+  +---------+
+|  Canguru  |  |  Cachorro  |  |  Cobra  |  |  Tartaruga  |  |  Goldfish  |  |  Arara  |
++-----------+  +------------+  +---------+  +-------------+  +------------+  +---------+
+
+Atributos da classe 'Animal':
+peso
+idade
+membros
+[abs] locomover()
+[abs] comer()
+[abs] fazerSom()
+
+Atributos das especificações:
+Mamífero: corPelo
+Réptil: CorEscama
+Peixe: CorEsca/ SoltarBolha()
+Ave CorPena/ FazerNinho()
+
+atributos das classes folhas:
+Canguro: usalBolsa()/ locomover()
+Cachorro: abanarRabo()/ fingirMorto()
+cobra: implementalçao pobre
+Tartaruga: locomover()
+Goldfish: implementação pobre
+Arara: implementaçãp pobre
+
+-> Mesma assinatura = polimorfismo de sobreposição.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

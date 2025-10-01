@@ -1,0 +1,168 @@
+Herança (Parte 2)
+
+🧪Exemplo - Navegação Pela Herança:
+
+		            +---------+
+		            |    A    | 🌳 Root
+		            +---------+
+		     	         ↑
+     +---------------------------+------------------------------+
+     |		       	         |			        |
++----------+                +----------+                  +------------+	
+|    AA    | //👧/🧓	    |    AB    | //👧/🧓         |     AC     | //👧/🧓
++----------+	            +----------+                  +------------+
+     ↑                           ↑                              ↑
+     |                 +---------+----------+                   |
+     |                 |                    |                   |
++----------+     +-----------+        +------------+      +------------+
+|   AAA    |     |    ABA    |        |     ABB    |      |     ACA    |
++----------+     +-----------+        +------------+      +------------+
+//🍃 folha/👧   //👧/🧓	     	  //🍃 folha/👧	  //🍃 folha/👧	
+			 ↑
+                +--------+--------+
+	        |		  |
+           +----------+	     +----------+
+           |   ABAA   |	     |   ABAB   |
+           +----------+	     +----------+
+           //🍃 folha/👧	 //🍃 folha/👧
+
+
+🧠Conceito:
+
+🔹 A classe 'A' é progenitora de 'AA', 'AB' e 'AC'. Mas isso vai depender do ponto de vista, por exemplo, 'AB' também pode ser chamada de progenitora, pois é mãe(superclasse) de 'ABA' e 'ABB'. Então, no ponto de vista em que 'A' é classe principal, 'AB' é uma subclasse. Mas no ponto de vista de 'AB'(superclasse), 'ABA' e 'ABB' são subclasses.
+
+>>🌳 Root: Uma classe que não é subclasse. Não tem uma super classe(🧓).
+
+>>🍃 Folha: Subclasse que não possui subclasses(👧). Não tem classes filhas. 
+
+>> Descendentes: Vamos pensar no ponto de vista de 'A', 'AC' não é descendente de 'A', e sim filha(👧) de 'A'. 'AC' têm uma filha,  'ACA' que é descendente de 'A'.
+
+>> Ancestrais: Dos nestos adiante.
+
+🔹Especialização: É quando percoremos a arvore de cima para baixo
+🔹Generalização: É quando percoremos a arvore de baixo para cima.
+
+🧬Tipos de Herança:
+
+🔹1. Herança de implementação(pobre, mais simples)
+🔹2. Herança para diferença(Mais completa)
+
+🧪Exemplo - Diagrama de Herança(de forma abstrata):
+
+					   👤Classe Pessoa (abstract):
+					   ➝ (-) nome;
+			    +----------+   ➝ (-) idade;
+			    |  Pessoa  |   ➝ (-) sexo;
+			    +----------+   ➝ (public method final) fazerAniversario()	
+		                 ↑
+              +------------------+------------------+
+	      |		         |		    |
+	      |  		 |		    |	        🧑‍🏫Classe Professor:
+	+-------------+		 |            +-------------+   🧬extends: 'Pessoa';
+        |  Visitante  |		 |	      |  Professor  |   ➝ especialidade;
+        +-------------+		 |	      +-------------+   ➝ salario;
+        		         |           		        ➝ receberAumento()
+				 |
+🚶Classe Visitante:       +-------------+  👨‍🎓Classe Aluno:
+➝ ...			  |    Aluno    |   ➝ (-) matricula;
+➝ herança implementaçao	  +-------------+   ➝ (-) curso;
+➝ 🧬extends 'Pessoa';      	 ↑	    ➝ (+) pagarMensalidade()
+          			 |	    ➝ 🧬extends:'Pessoa';
+		        +--------+----------+
+		        |	 	    |
+		 +------------+       +-----------+  🛠️Classe Técnico:
+		 |  Bolsista  |       |  Técnico  |  ➝ registroProfissional;
+ 	 	 +------------+       +-----------+  ➝ praticar()
+						     🧬extends: 'Aluno';
+		💰Classe Bolsista:
+		➝ 🧬extends 'Aluno';
+		➝ (-) bolsa;
+		➝ (+) renovarBolsa()
+		➝ (+) pagarMensalidade() //@Sobrepor
+
+
+Observações:
+
+>> A classe Pessoa é uma classe genérica, abstrata.
+
+>> Visitante, aluno e professor herdam tudo aquilo que a classe pessoa tem.
+
+>> A classe Visitante não implementa nenhum atributo ou método, terá apenas oque herdar da root. È uma herança pobre.
+
+>> As classes 'Bolsista' e 'Técnico' são implementações da classe 'Aluno'. Ambos possuem as mesmas características de 'Aluno', o 'Bolsista' é uma especialização da generalização de 'Aluno'
+
+🧠Conceito: Abstrato e Final
+
+>> O entendimento dos termos 'Abstrato' e 'Final' vai depender de onde você esta aplicando-o, um método e uma classe podem ser abstratos e finais. A funcionalidade/operacionalidade será diferente.  
+
+🔹Classe Abstrata:
+>> "não pode ser instanciada. Só pode servir como progenitora."
+>> Quando temos uma determinada classe e definimos ela como abstrata, ela não pode gerar objetos. 
+
+🔹Método Abstrato:
+>> "Declarado, mas não implementado na progenitora."
+>> Um método abstrato só pode ser colocado dentro de uma interface ou de uma classe abstrata.
+
+🔹Classe Final:
+>> "Não pode ser herdada por outra classe. Obrigatoriamente folha"
+>> Ou seja, uma classe final não pode ter classes filhas.
+
+🔹Método Final:
+>> "Não pode ser sobrescrito pelas suas subclasses. Obrigatoriamente herdado."
+>> //conceito de sobreposição//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,225 @@
+Teoria Métodos Especiais em Java (aula 4a):
+
+Em Java, métodos getters são usados para obter o valor de atributos privados de uma classe. Eles fazem parte do princípio de encapsulamento, que protege os dados e permite que sejam acessados de forma controlada.
+
+>> Como funciona um getter?
+Um getter geralmente segue o padrão:
+
+-- O nome começa com get, seguido pelo nome do atributo com a primeira letra em maiúscula.
+
+-- Retorna o valor do atributo correspondente.
+
+-- Não recebe parâmetros.
+
+>> Exemplo de um getter em Java:
+
+public class Pessoa {
+    private String nome;  // Atributo privado
+
+    // Construtor
+    public Pessoa(String nome) {
+        this.nome = nome;
+    }
+
+    // Getter para o nome
+    public String getNome() {
+        return nome;
+    }
+}
+
+>> Usando o getter:
+
+public class Main {
+    public static void main(String[] args) {
+        Pessoa p = new Pessoa("Carlos");
+        System.out.println(p.getNome());  // Saída: Carlos
+    }
+}
+
+>> Por que usar getters?
+
+-- Encapsulamento: Protege os dados da classe contra acessos diretos.
+
+-- Flexibilidade: Permite modificar a implementação sem alterar o código que usa a classe.
+
+-- Validação: Pode incluir lógica para restringir ou formatar o valor antes de retorná-lo.
+
+>> Getter com lógica adicional:
+
+public String getNomeFormatado() {
+    return "Nome: " + nome.toUpperCase();
+}
+
+Assim, se nome = "Carlos", o retorno seria "Nome: CARLOS".
+
+===========================================================================================
+
+Métodos Modificadores(Setters):
+
+Os métodos modificadores em Java, também chamados de setters, são usados para modificar os valores de atributos privados de uma classe. Eles fazem parte do encapsulamento, permitindo controlar como os atributos são alterados.
+
+>> Como funciona um setter?
+
+-- O nome geralmente começa com set, seguido pelo nome do atributo com a primeira letra em maiúscula.
+
+-- Recebe um parâmetro do mesmo tipo do atributo e o usa para atualizar seu valor.
+
+-- Normalmente, não retorna nenhum valor (void).
+
+>> Exemplo de um setter em Java:
+
+public class Pessoa {
+    private String nome;  // Atributo privado
+
+    // Construtor
+    public Pessoa(String nome) {
+        this.nome = nome;
+    }
+
+    // Getter
+    public String getNome() {
+        return nome;
+    }
+
+    // Setter para modificar o nome
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+}
+
+>> Usando o setter:
+
+public class Main {
+    public static void main(String[] args) {
+        Pessoa p = new Pessoa("Carlos");
+
+        System.out.println(p.getNome()); // Saída: Carlos
+
+        p.setNome("Ana"); // Modificando o nome usando o setter
+
+        System.out.println(p.getNome()); // Saída: Ana
+    }
+}
+
+>> Por que usar setters?
+
+-- Encapsulamento: Evita que atributos sejam alterados diretamente.
+
+-- Validação: Permite verificar ou modificar os dados antes de alterá-los.
+
+-- Flexibilidade: Pode ser usado para notificar outras partes do código sobre a mudança.
+
+>> Setter com Validação:
+
+-- Podemos adicionar regras dentro do setter para evitar valores inválidos:
+
+public void setIdade(int idade) {
+    if (idade >= 0) {  // Apenas aceita valores positivos
+        this.idade = idade;
+    } else {
+        System.out.println("Idade inválida!");
+    }
+}
+
+========================================================================================================================
+
+Métodos Construtores em Java:
+Um construtor em Java é um método especial usado para inicializar objetos de uma classe. Ele é chamado automaticamente quando um objeto é instanciado usando new.
+
+Características de um Construtor:
+
+✔ Tem o mesmo nome da classe.
+✔ Não retorna valor (nem mesmo void).
+✔ Pode receber parâmetros para definir valores iniciais.
+✔ Pode haver mais de um construtor na mesma classe (sobrecarga).
+✔ Se nenhum construtor for definido, Java cria um construtor padrão automaticamente.
+
+>> Exemplo de um Construtor em Java:
+
+public class Pessoa {
+    private String nome;
+    private int idade;
+
+    // Construtor para inicializar nome e idade
+    public Pessoa(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    // Getters para acessar os atributos
+    public String getNome() {
+        return nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+}
+>> Criando e Usando um Objeto com Construtor:
+
+public class Main {
+    public static void main(String[] args) {
+        Pessoa p = new Pessoa("Carlos", 25);
+        System.out.println("Nome: " + p.getNome()); // Saída: Nome: Carlos
+        System.out.println("Idade: " + p.getIdade()); // Saída: Idade: 25
+    }
+}
+
+Tipos de Construtores em Java:
+
+1. Construtor Padrão (sem parâmetros):
+✔ Se você não definir nenhum construtor, Java cria um automaticamente:
+
+public class Pessoa {
+    private String nome;
+    
+    // Construtor padrão (sem parâmetros)
+    public Pessoa() {
+        this.nome = "Desconhecido";
+    }
+
+    public String getNome() {
+        return nome;
+    }
+}
+
+>> Uso:
+
+Pessoa p = new Pessoa();
+System.out.println(p.getNome()); // Saída: Desconhecido
+
+2. Sobrecarga de Construtores:
+✔ Podemos definir vários construtores com diferentes parâmetros:
+
+public class Carro {
+    private String modelo;
+    private int ano;
+
+    // Construtor 1: sem parâmetros
+    public Carro() {
+        this.modelo = "Desconhecido";
+        this.ano = 0;
+    }
+
+    // Construtor 2: com modelo
+    public Carro(String modelo) {
+        this.modelo = modelo;
+        this.ano = 2023;
+    }
+
+    // Construtor 3: com modelo e ano
+    public Carro(String modelo, int ano) {
+        this.modelo = modelo;
+        this.ano = ano;
+    }
+}
+
+>> Uso:
+
+Carro c1 = new Carro(); // Modelo: Desconhecido, Ano: 0
+Carro c2 = new Carro("Civic"); // Modelo: Civic, Ano: 2023
+Carro c3 = new Carro("Corolla", 2020); // Modelo: Corolla, Ano: 2020
+
+✔ Conclusão:
+-- Os construtores são essenciais para inicializar objetos corretamente e garantir que os atributos tenham valores válidos desde o início.
+

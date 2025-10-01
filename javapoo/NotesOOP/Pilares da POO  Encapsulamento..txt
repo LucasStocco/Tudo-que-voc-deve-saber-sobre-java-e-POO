@@ -1,0 +1,81 @@
+Pilares da POO: o Encapsulamento. 
+
+>> 1.Introdução ao Encapsulamento
+O encapsulamento é um dos princípios fundamentais da Programação Orientada a Objetos (POO). Em resumo, encapsulamento é o processo de ocultar os detalhes internos de implementação de uma classe e expor apenas o necessário para que outros componentes do sistema interajam com ela. Isso melhora a segurança e a integridade dos dados.
+
+>> 2. Objetivo do Encapsulamento
+O principal objetivo do encapsulamento é:
+
+-- Proteger os dados da classe: ao tornar os atributos privados, você evita que eles sejam acessados diretamente de fora da classe.
+
+-- Controle de acesso: você pode criar métodos para controlar como os dados internos são acessados ou modificados. Assim, pode garantir que as alterações no estado de um objeto sejam feitas de maneira controlada.
+
+>> 3. Exemplo Prático
+No vídeo, o professor demonstra o uso do encapsulamento com um exemplo de uma classe chamada Pessoa, que possui atributos como nome e idade.
+
+-- Sem encapsulamento: os atributos da classe são públicos, o que permite que qualquer parte do programa acesse e altere os dados diretamente.
+
+-- Com encapsulamento: os atributos são modificados para privados e são fornecidos métodos públicos chamados getters (para obter o valor) e setters (para modificar o valor).
+
+O código mostrado é:
+
+public class Pessoa {
+    private String nome;
+    private int idade;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        if (idade >= 0) {
+            this.idade = idade;
+        } else {
+            System.out.println("Idade inválida.");
+        }
+    }
+}
+Atributos privados: private String nome; e private int idade;.
+
+Métodos públicos: getNome(), setNome(String nome), getIdade(), e setIdade(int idade).
+
+Isso permite que a classe controle como os dados são acessados e modificados. Por exemplo, a idade não pode ser definida como um valor negativo.
+
+>> 4. Vantagens do Encapsulamento
+O vídeo detalha as vantagens de usar encapsulamento em Java:
+
+Segurança: os dados são protegidos contra acessos não autorizados. Por exemplo, um programa não poderá, por engano, alterar um atributo diretamente, garantindo a integridade dos dados.
+
+Manutenção: mudanças internas na implementação da classe podem ser feitas sem impactar outras partes do sistema. Por exemplo, se a lógica de cálculo da idade mudar, você pode alterar apenas o método setIdade(), sem afetar o restante do código.
+
+Flexibilidade: o encapsulamento permite adicionar funcionalidades extras aos métodos sem afetar o código que usa a classe. Por exemplo, você pode adicionar uma verificação adicional ao setter sem que o código de fora precise saber.
+
+>> 5. A Diferença Entre Atributos Públicos e Privados
+O vídeo também discute a diferença entre atributos públicos e privados. A utilização de atributos públicos permite que qualquer parte do código tenha acesso a esses dados diretamente, o que pode resultar em problemas de segurança e inconsistência no sistema. O uso de atributos privados, junto com métodos públicos, proporciona maior controle sobre como esses atributos são acessados e alterados.
+
+>> 6. Como o Encapsulamento Melhora o Código
+O conceito de encapsulamento promove boas práticas de programação. Ele ajuda a:
+
+Evitar dependências desnecessárias entre as partes do código.
+
+Facilitar a identificação de erros no sistema, pois você pode centralizar a lógica de acesso e modificação de dados.
+
+Promover um design de código mais limpo e modular.
+
+>> 7. Conclusão
+O encapsulamento é uma técnica fundamental que ajuda a criar sistemas mais seguros e fáceis de manter. A partir do momento que você começa a usar encapsulamento em suas classes, estará criando um código mais robusto, evitando erros e facilitando a manutenção do software.
+
+
+
+
+
+
+

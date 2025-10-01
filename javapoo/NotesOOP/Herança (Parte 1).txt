@@ -1,0 +1,26 @@
+Herança (Parte 1)
+
+>> Explicando o Conceito de Herança:
+
+Imagine uma mãe, e seu filha, você com certeza já ouviu algo como: "Essa menina tem os olhos da mãe" ou "Puxou a cara da mãe". Se fosse parar para analisar, verá que a filha de fato herda, traz características da mãe. Ela pode herdar, "puxar" tanto características físicas como comportamentos.
+
+A partir de agora, as nossas classes podem ser "mães" e elas podem gerar "filhas"! E essas filhas vão "puxar" características e comportamentos dessas mães
+
+>> Definição de Herança dentro da POO:
+
+Permite basear uma nova classe na definição de uma outra classe previamente existente.
+
+Então basicamente eu tenho uma classe que já existia e eu preciso criar uma classe nova, usando a herança, eu não preciso cria-la do zero, se essa classe nova for baseada(filha) numa classe anterior(mãe) não será necessário recriar essa nova classe.
+
+>> Observação:
+
+A herança será aplicada tanto para as características quanto para os comportamentos.
+
+Isso é, toda classe tem suas características e comportamentos, se ela se torna mãe, ela vai conceder todas essas características e comportamentos para suas filhas, e toda filha terá seus comportamentos e características herdados de sua mãe.
+
+>> Conceitos Adicionais:
+
+Quando temos uma classe mãe e sua(s) filha(s), chamamos a mãe de "Progenitora" ou "Superclasse", todos esses termos se remetem a mesma coisa, uma classe que dá origem a outras classes, que consequentemente vão herdar todas as suas características e comportamentos.
+
+As classes filhas também podem ser chamadas de "subclasses", que significa que são classes oriundas de suas superclasses. para criar uma subclasse, não é necessário dizer seus atributos e comportamentos que vêm da sua superclasse. pois esse processo já ocorre automaticamente.
+

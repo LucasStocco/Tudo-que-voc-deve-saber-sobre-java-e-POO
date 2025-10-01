@@ -1,0 +1,26 @@
+Relacionamento Entre Classes:
+
+Teoria do "Ultra Emoji Combat"(Um joguinho de luta de emojis):
+
+È a luta entre os emojis, nós vamos colocar eles para lutar, basicamente oque vamos fazer é criar um perfil de um lutador. As características que um lutador deve ter são: nome, nacionalidade, idade, altura, peso, categoria, vitorias, derrotas e empates. Todos esses itens(atributos) devem ser registrados para cada lutador(1º classe). 
+
+Abstração: È você considerar somente aquilo que lhe importa num determinado momento de programação de alguma classe. 
+
+Em Orientação a Objetos (OO), o relacionamento entre classes define como elas interagem entre si. Os principais tipos são:
+
+Associação – Uma classe usa outra sem pertencer a ela. Exemplo: uma "Pessoa" tem um "Endereço".
+
+Agregação – Uma classe contém outra, mas elas podem existir separadamente. Exemplo: uma "Biblioteca" tem "Livros", mas os livros podem existir sem a biblioteca.
+
+Composição – Uma classe contém outra, e se a principal deixar de existir, a outra também desaparece. Exemplo: um "Carro" tem um "Motor"; se o carro for descartado, o motor deixa de existir.
+
+Herança – Uma classe herda atributos e métodos de outra. Exemplo: "Cachorro" herda de "Animal".
+
+Dependência – Uma classe depende de outra para funcionar, mas apenas momentaneamente. Exemplo: um "Cliente" faz um "Pedido".
+
+Essas relações ajudam a organizar e reutilizar código de forma eficiente.
+
+
+
+
+

@@ -1,0 +1,134 @@
+Herança (Parte 2)
+
+Navegação Pela Herança: 
+
+Vamos entender a navegação por uma arvore de herança. Imagine uma classe 'a'(progenitora, a nossa raiz), que foi criada do zero, ela não tem mãe, significa que ela não herda nada de ninguém. Depois, eu crio três filhas(subclasses) para 'a'. Sendo elas: 'aa', 'ab' e 'ac'. 
+
+-- As classses que iniciam nossa arvore chamamos de raiz, as classes que não tem filhas, chamamos de folhas No diagrama de classes, a nossa arvore começa de cima para baixo, por isso nossa raiz 'a' está no topo.
+
+>> descendente: são as classes que são filhas das filhas, não contamos a mãe. Como se fossem 'netas'. No exemplo, vemos que a classe 'aca' que veio de 'ac', que veio de 'a' é descendente de 'a'.
+
+>> Ancestral: São todas as classes que vêm depois das classes netas.
+
+>> Especialização: quando percoremos a arvore de cima para baixo.
+
+>> Generalização: quando percoremos a arvore de baixo para cima.
+
+-> A subclasse 'aa' têm uma filha 'aaa', que tem tudo que 'aa' tem, logo 'aaa' tem tudo de 'a'(progenitora), uma herda a outra.
+
+-> A subclasse 'ab' têm duas filhas, 'aba' e 'abb', que herdam as características de 'ab', que herdaram de 'a'(progenitora).
+
+-> A subclasse 'ac' têm apenas uma filha, 'aca' que herdou as características de 'ac, que veio de 'a'(progenitora).
+
+-> A subclasse 'aba' têm duas filhas, 'abaa' e 'abab'.
+
+-- 'a' é progenotora de 'aa', 'ab' e 'ac'
+-- 'aa' é progenitora de 'aaa'
+-- 'a' é progenitora de 'ab'. E 'ab' é progenitora de 'aba' e 'abb'. 'aba' é progenitora de 'abaa' e 'abab'
+-- 'a' é progenitora de 'ac' que é progenitora de 'aca'			
+
+>> Tipos de Herança:
+
+>> Herança de Implementação (pobre, mais simples):
+
+>> Herança para Diferença (mais completa):
+
+Entendendo Melhor:
+
+Imagine uma classe pessoa, ela é generica e abstrata. Ela tem os atributos 'nome', 'idade' e 'sexo'. E tem um método 'fazerAniversario()'.
+
+Depois vamos fazer uma herança para outras três classes. 'Visitante', 'Professor' e 'Aluno'. A lógica é que esses atributos que elas estão herdando são oque elas tem em comum, são caracteristicas de pessoas, de forma abstrata nesse exemplo.
+
+Caracteristicas(atributos/metodos) que somente cada classe tem:
+
+--'Aluno': 'matricula', 'curso' e 'pagarMensalidade()'.
+
+--'Professor': 'especialidade', 'salario' e 'receberAumento()'.
+
+--'Visitante': Terá somente oque herdar da classe 'pessoa'(chamamos de herança implementação, pois apenas implementa uma classe abstrata).
+
+Vamos implementar novas classes na nossa arvore:
+
+A classe 'aluno'(generalização das classes) terá duas classes filhas, 'bolsista' e 'tecnico'. São duas especializações de aluno no nosso exemplo.
+
+Oque diferencia todos os tipos de aluno?
+
+Tanto alunos bolsistas como técnicos tem todas as características de aluno. Só que a diferença da especialização bolsista é 'bolsa', 'renovarBolsa()' e 'pagarMensalidade'. Observe que o método 'pagarMensalidade()' já existia antes na classe aluno, então concluímos que o método foi sobrescrito.
+
+O aluno técnico tem 'registroProfissiona' e 'praticar()'.
+
+>> Conceitos de Abstrato e Final: 
+
+Vai depender de onde o conceito vai estar sendo aplicado, um método e uma classe podem ser abstratos e finais, mas a funcionalidade,  a operacionalidade disso vai ser diferente.
+
+
+Vamos Entender Isso Melhor:
+
+Vamos pensar em quatro conceitos, quatro classes:
+
+>> 'Classe Abstrata': Não pode ser instanciada. Só pode servir como progenitora. 
+-- Isso é, ao criar uma classe e definir ela como abstrata, ela não pode gerar objetos.
+
+>> 'Método Abstrato': Declarado, mas não implementado na progenitora.
+-- Um método abstrato só pode ser colocado dentro de uma interface ou de uma classe abstrata.
+
+>> 'Classe Final': Não pode ser herdada por outra classe. Obrigatoriamente folha.
+-- Ou seja, uma classe final não pode ter filhas.
+
+>> 'Método Final': Não pode ser sobrescrito pelas suas subclasses. Obrigatoriamente herdado.
+-- Não pode ser sobreposto, não é possível geral uma especialização desse método.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
