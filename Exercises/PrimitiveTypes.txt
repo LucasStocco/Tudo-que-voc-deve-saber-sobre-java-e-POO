@@ -1,0 +1,79 @@
+Revisando algoritimos:
+
+-> Declaraçao de tipos
+-> Inicialização de variáveis
+
+var
+    idade : int (número inteiro)
+    salário : real (ponto flutuante ou vírgula)
+    letra : Caractere
+    casado : logico (verdadeiro ou falso)
+
+Inicio
+    idade <- 3  
+    salário <- 1825.54
+    letra <- "L" (em algoritimo, ""  representa o tipo caractere)
+    casado <- falso
+
+=========================================================================
+Como fazer essas 4 declarações pro ínico em Java? (As 3 maneiras básicas)
+-------------------------------------------------------------------------
+
+>> OBS: O Java é uma linguagem fortimente tipada.(quer dizer que o tipo é muito importante) Caso você queira fazer tremitações(mudar/editar) entre tipos na maioria das vezes você terá que fazer conversões ou especificaçôes.
+
+int idade = 3; (forma de variável/ mais simples)
+
+-------------------------------------------------------------------------
+Especificando tipos de valores específicos utilizando o typecast:
+
+declarações para int:
+
+>> OBS: Classses em Java sempre comessão com letra maíusculas. 
+
+int idade = (int) 3; 
+>> (forma de variável/ o int em '()' especifica o tipo, é um typecast)
+
+Integer idade = new Integer(3); 
+>> (forma de objeto utilizando Classes)/ (new é para criar o objeto)
+
+>>Integer é uma classe
+
+--------------------------------------------------------------------------
+Declarações para float:
+
+float salário = 1825.54f;
+>> O 'f' significa flaot
+
+float salário = (float) 1825.54;
+
+Float salário = new float(1825.54);
+>> utilizando classes Wrapper
+
+--------------------------------------------------------------------------
+Declarações para Caracteres:
+
+char letra = 'L'; 
+>> (o char só aceita uma única letra)
+
+char letra = (char) 'L';
+
+Character letra = new Character('L');
+
+--------------------------------------------------------------------------
+Declarações para Boolean:
+
+boolean casado = 'false';
+
+boolean casado = (boolean) false;
+
+Boolean casado = new Boolean(false);
+
+=========================================================================
+Incompatibilidades Números int <-> String:
+
+
+
+
+
+ 
+

@@ -1,0 +1,19 @@
+-> Como utilizar o JavaDoc?
+
+>> Para que o ejavadoc gere a ducumentação corretamente, é necessário adicionar comentários especiais no código, logo acima das classes, interfaces, métodos ou atribitos que se deseja documentar. 
+
+-> Principais Tags do JavaDoc:
+
+>> @author: Indica o(s) autor(es) da classe ou método.
+
+>> @verson: Especifica a versão da classe ou método.
+
+>> @param: Descreve um parâmetro de um método.
+
+>> @return: Informa o valor de retorno de um método. Não deve ser usada em construtores  ou em métodos que retornam void.
+
+>> @throws ou @eexception: Documenta as  exceções que um método pode lançar.
+
+>> @deprecated: Indica que o método ou classe não é mais recomendada para uso e pode ser removida em versões futuras.
+
+>> @Since: Informa desde qual versão a classe ou método está disponível.

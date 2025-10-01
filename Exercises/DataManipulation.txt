@@ -1,0 +1,70 @@
+>> pesquisar sobre saída de dados
+
+System.out.println()/System.out.print
+
+>> Comandos de entrada
+
+Antes de falar sobre tipos primitos, temos que falar sobre comentários:
+
+'//' Para comentários em uma linha específica.
+EX: //Este é um comentário de uma linha
+
+'/*' Para múltiplas linhas.
+EX: /*
+     * Nos comentários de muitas linhas,
+     * podemos escrever o quanto quiser 
+     * até indicarmos o final do comentário.
+     */
+
+'/**' Comentários para documentação
+EX: /**
+     Exemplo para o CursoemVideo de Java
+     @author Lucas Stocco
+     @Version 1.0
+     @Since 2025-03-06
+
+#PRECISO ESTUDAR SOBRE JAVA DOCS
+
+==========================================================================
+Saída de Dados:
+
+>> È quando eu pego um dado que está na memoria do computador e mostro de alguma maneiara para o usuário.
+  
+flaot nota = 8.5f;
+
+System.out.print("Sua nota é: " + nota);
+Use: sout + tab/enter
+--------------------------------------------------------------------------
+De forma formatada:
+
+System.out.format("Sua nota é %.2f", nota);
+System.out.printf("Sua nota é %.2f", nota);
+
+==========================================================================
+Entrada de Dados:
+
+>> Todo dado que está fora e que eu queira coloca-ló para dentro do computador. Normalmente, utilizando o teclado
+
+>>DETALHE: O Java é como um carro pupolar, ele vem com os comandos de saída('.out' comando de entrada)/(java.lang) de dados mas não vêm com nenhum comando de entrada de dados.
+
+>> A classe java.util.Scanner permite a entrada de dados, mas não é carregada automaticamente.
+
+>> Crie o objeto:
+
+import java.util.Scanner;
+Scanner teclado = new Scanner(System.in);
+
+-> Entre () é oq o objeto vai escanear. 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
